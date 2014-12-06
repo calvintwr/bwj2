@@ -7,6 +7,10 @@
   src: url('../../../static/fonts/Raleway-ExtraLight.otf');
 }
 @font-face {
+  font-family: Raleway-Thin;
+  src: url('../../../static/fonts/Raleway-THin.otf');
+}
+@font-face {
   font-family: ChristopherHand;
   src: url('../../../static/fonts/comesinhandy.ttf');
 }
@@ -28,13 +32,24 @@ a:visited {
   color: #674ea7;
   text-decoration: none;
 }
+blockquote {
+  border: 0px !important; /* over-write bootstrap border defaults */
+}
+blockquote h1, blockquote h2, blockquote h3, blockquote h4, blockquote h5, blockquote h6 {
+  color: #674ea7;
+}
 body {
   text-align: center;
   color: #606060;
 }
+
+.tag-line {
+  letter-spacing: 2px;
+  font-size: 12px;
+  margin-top: 12px;
+}
 section#header header {
   padding-top: 20px;
-  padding-bottom: 20px;
 }
 section#header header a#logo {
   max-width: 350px;
@@ -43,6 +58,11 @@ section#header header a#logo {
 }
 section#header header a#logo img {
   margin: 0 auto;
+  padding: 0px 15px;
+}
+#mainmenu {
+  padding: 20px 0px;
+  margin-top: 15px;
 }
 section#header header nav#mainmenu ul {
   margin: 0;
@@ -101,6 +121,7 @@ section#banner {
   padding: 0;
   height: auto;
   background-color: #ddd;
+  margin-bottom: 25px;
 }
 .banner-holder img {
   width: auto;
@@ -171,6 +192,18 @@ ul.banner-nav li.active {
 }
 section#blog {
   max-width: 810px;
+}
+section#blog article {
+  margin-bottom: 70px;
+}
+section#blog h2.title {
+  text-transform: uppercase;
+  font-size: 46px;
+  font-family: 'Raleway-Thin';
+  letter-spacing: 4.5px;
+}
+section#blog p.description {
+  margin-bottom: 30px;
 }
 section#blog img {
   margin: auto;
