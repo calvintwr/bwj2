@@ -114,14 +114,14 @@ section#header header nav#submenu ul li::after {
 section#header header nav#submenu ul li:last-child::after {
   content: '';
 }
-/****** replaced by blockquote
 .highlight {
   color: #674ea7;
-}*/
+}
 section#banner {
   padding: 0;
   height: auto;
   background-color: #ddd;
+  margin-bottom: 25px;
 }
 .banner-holder img {
   width: auto;
@@ -193,11 +193,17 @@ ul.banner-nav li.active {
 section#blog {
   max-width: 810px;
 }
+section#blog article {
+  margin-bottom: 70px;
+}
 section#blog h2.title {
   text-transform: uppercase;
   font-size: 46px;
   font-family: 'Raleway-Thin';
   letter-spacing: 4.5px;
+}
+section#blog p.description {
+  margin-bottom: 30px;
 }
 section#blog img {
   margin: auto;
