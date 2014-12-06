@@ -1,0 +1,256 @@
+@charset "utf-8";
+@font-face {
+  font-family: Raleway-Light;
+  src: url('../fonts/Raleway-Light.otf');
+}
+@font-face {
+  font-family: Raleway-ExtraLight;
+  src: url('../fonts/Raleway-ExtraLight.otf');
+}
+@font-face {
+  font-family: ChristopherHand;
+  src: url('../fonts/comesinhandy.ttf');
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: Raleway-ExtraLight;
+}
+a:hover,
+a:focus {
+  color: #674ea7;
+  text-decoration: underline;
+}
+a:link,
+a:visited {
+  color: #674ea7;
+  text-decoration: none;
+}
+body {
+  text-align: center;
+  color: #606060;
+}
+section#header header {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+section#header header a#logo {
+  max-width: 350px;
+  display: block;
+  margin: auto;
+}
+section#header header a#logo img {
+  margin: 0 auto;
+}
+section#header header nav#mainmenu ul {
+  margin: 0;
+  padding: 0;
+}
+section#header header nav#mainmenu ul li {
+  display: inline-block;
+  text-transform: uppercase;
+  margin: 0px 1%;
+}
+section#header header nav#mainmenu ul li a {
+  color: #606060;
+}
+section#header header nav#mainmenu ul a:hover {
+  color: #674ea7;
+}
+section#header header nav#mainmenu ul a:active {
+  color: #674ea7;
+}
+section#header header nav#submenu {
+  top: -5px;
+}
+section#header header nav#submenu ul {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+section#header header nav#submenu ul li {
+  display: inline-block;
+  font-size: 1em;
+  padding: 0px 0px 0px 20px;
+}
+section#header header nav#submenu ul li a:hover {
+  color: #674ea7;
+}
+section#header header nav#submenu ul li.active a {
+  display: inline-block;
+  padding-bottom: 0px;
+  border-bottom: 1px solid #6c6c6c;
+}
+section#header header nav#submenu ul li::after {
+  content: '•';
+  font-size: 2em;
+  display: inline;
+  margin-left: 20px;
+  position: relative;
+  top: 3px;
+}
+section#header header nav#submenu ul li:last-child::after {
+  content: '';
+}
+.highlight {
+  color: #674ea7;
+}
+section#banner {
+  padding: 0;
+  height: auto;
+  background-color: #ddd;
+}
+.banner-holder img {
+  width: auto;
+  position: absolute;
+  right: 0;
+  height: auto;
+  min-height: 500px;
+}
+.banner-holder div.row {
+  position: relative;
+  z-index: 99;
+  height: 420px;
+  display: inline-flex;
+}
+.banner-holder {
+  position: relative;
+  overflow-y: hidden;
+  width: 100%;
+  max-width: 1366px;
+  height: 500px;
+}
+.banner-holder,
+.banner-holder div.row div.frame a.button {
+  color: #fff;
+}
+.frame {
+  min-height: 170px;
+  margin: auto auto;
+}
+.banner-holder div.row div.frame a.button {
+  display: block;
+  padding: 17px;
+  border: 1px solid #fff;
+  max-width: 200px;
+  margin: auto;
+  text-transform: uppercase;
+}
+.banner-holder h2 {
+  font-size: 3.5em;
+  text-transform: uppercase;
+}
+.banner-holder div.row.banner-nav-holder {
+  clear: both;
+  display: block;
+  width: 100%;
+  height: 30px;
+  margin: 0;
+}
+ul.banner-nav {
+  display: inline-flex;
+  margin: auto;
+  padding: 0;
+}
+ul.banner-nav li {
+  display: inline-block;
+}
+ul.banner-nav li {
+  display: inline-block;
+  background: #464646;
+  width: 15px;
+  height: 15px;
+  margin: 0px 6px;
+  cursor: pointer;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+}
+ul.banner-nav li.active {
+  background: #fff;
+}
+section#blog {
+  max-width: 810px;
+}
+section#blog img {
+  margin: auto;
+}
+section#blog .row {
+  margin-bottom: 20px;
+  margin-right: 0;
+  margin-left: 0;
+}
+hr.dash {
+  border-top: 1px dashed #B0B0B0;
+  max-width: 110px;
+}
+p#social {
+  color: #9E9E9E;
+  font-size: 0.9em;
+}
+footer {
+  max-width: 1024px;
+}
+footer #about h2 {
+  font-family: ChristopherHand;
+  font-size: 4em;
+}
+footer #sponsors img {
+  display: inline-block;
+}
+@media screen and (max-width: 760px) and (min-width: 481px) {
+  .banner-holder.container.text-center {
+    background: url(http://laboratory.dev.lan/bellywellyjelly/static/img/banner.png);
+    background-size: cover;
+    background-position: top right;
+    background-repeat: no-repeat;
+  }
+}
+@media screen and (min-width: 1201px) {
+  .banner-holder img {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    height: auto;
+    min-height: 500px;
+  }
+}
+div#secondary-nav {
+  padding: 40px 0px;
+  border-top: 2px dotted #6c6c6c;
+  max-width: 1024px;
+  margin: 50px auto 0px;
+}
+div#secondary-nav li a {
+  color: #6c6c6c;
+}
+@media screen and (max-width: 480px) {
+  footer #sponsors img {
+    display: block;
+    clear: both;
+    margin: 20px auto;
+  }
+  .banner-holder.container.text-center {
+    background: url(http://laboratory.dev.lan/bellywellyjelly/static/img/banner.png);
+    background-size: cover;
+    background-position: -680px 0px;
+    background-repeat: no-repeat;
+  }
+}
+.img-holder {
+  max-height: 234px;
+  margin: 0px;
+  padding: 0;
+}
+.row.thumbnail-holder {
+  padding: 0;
+  max-width: 1024px;
+  margin: 0px auto 30px;
+  padding-bottom: 30px;
+  border-bottom: 2px dotted #6c6c6c;
+}
+.thumbnail-holder .thumbnail {
+  width: 98%;
+  height: auto;
+}
