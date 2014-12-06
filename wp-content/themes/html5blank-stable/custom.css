@@ -32,9 +32,14 @@ body {
   text-align: center;
   color: #606060;
 }
+
+.tag-line {
+  letter-spacing: 2px;
+  font-size: 12px;
+  margin-top: 12px;
+}
 section#header header {
   padding-top: 20px;
-  padding-bottom: 20px;
 }
 section#header header a#logo {
   max-width: 350px;
@@ -43,6 +48,11 @@ section#header header a#logo {
 }
 section#header header a#logo img {
   margin: 0 auto;
+  padding: 0px 15px;
+}
+#mainmenu {
+  padding: 20px 0px;
+  margin-top: 15px;
 }
 section#header header nav#mainmenu ul {
   margin: 0;

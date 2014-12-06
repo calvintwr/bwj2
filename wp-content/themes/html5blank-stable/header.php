@@ -28,9 +28,12 @@
 	
 	<section id="header" class="text-center container">
 	<header class="row">
-		<a href="#" id="logo"><img class="img-responsive" alt="BellyWellyJelly" src="<?php echo get_template_directory_uri(); ?>/img/logo.png" width="341" height="76"></a><br><br>
-		<span class="tag-line">is in <img src="<?php echo get_template_directory_uri(); ?>/img/globe-icon.png" height="20" width="17"> <span class="highlight">SINGAPORE</span></span>
-		<br><br><br>
+		<a href="#" id="logo">
+            <img class="img-responsive" alt="BellyWellyJelly" src="<?php echo get_template_directory_uri(); ?>/img/logo.png" width="341" height="76">
+        </a>
+		<div class="tag-line">
+            is in <img src="<?php echo get_template_directory_uri(); ?>/img/globe-icon.png" height="20" width="17"> <span class="highlight">SINGAPORE</span>
+        </div>
 		<nav id="mainmenu">
 				<?php html5blank_nav(); ?>
 		</nav>
