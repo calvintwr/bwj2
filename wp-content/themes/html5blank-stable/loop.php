@@ -55,3 +55,4 @@
 	<!-- /article -->
 
 <?php endif; ?>
+<?php echo do_shortcode("[contentblock id=signature]") ?>
