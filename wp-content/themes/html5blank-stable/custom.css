@@ -199,7 +199,7 @@ section#blog article {
 section#blog h2.title {
   text-transform: uppercase;
   font-size: 46px;
-  font-family: 'Raleway-Thin';
+  font-family: 'Raleway-ExtraLight';
   letter-spacing: 4.5px;
 }
 section#blog p.description {
@@ -364,4 +364,16 @@ article img {
 }
 section#blog p a img {
     margin-bottom: 10px;
+}
+
+.mashicon-subscribe .icon:before {
+color: #fff!important;
+}
+.mashicon-subscribe {
+background: #FFA206;
+}
+.mashsb-container {
+    max-width: 190px;
+    margin: auto;
+    text-align: center;
 }
