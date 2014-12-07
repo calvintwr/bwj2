@@ -64,6 +64,18 @@ section#header header a#logo img {
   padding: 20px 0px;
   margin-top: 15px;
 }
+  @media (min-width: 0px) and (max-width: 480px) {
+    #mainmenu {
+      font-size: 12px !important;
+    }
+  }
+  @media (min-width: 481px) {
+    #mainmenu {
+      letter-spacing: 1px;
+    }
+  }
+
+
 section#header header nav#mainmenu ul {
   margin: 0;
   padding: 0;
@@ -71,7 +83,7 @@ section#header header nav#mainmenu ul {
 section#header header nav#mainmenu ul li {
   display: inline-block;
   text-transform: uppercase;
-  margin: 0px 1%;
+  margin: 0px 2%;
 }
 section#header header nav#mainmenu ul li a {
   color: #606060;
@@ -140,8 +152,6 @@ section#banner {
   position: relative;
   overflow-y: hidden;
   width: 100%;
-  max-width: 1366px;
-  height: 500px;
 }
 .banner-holder,
 .banner-holder div.row div.frame a.button {
@@ -232,14 +242,7 @@ footer #sponsors img {
   display: inline-block;
   margin: 0;
 }
-@media screen and (max-width: 760px) and (min-width: 481px) {
-  .banner-holder.container.text-center {
-    background: url(http://laboratory.dev.lan/bellywellyjelly/static/img/banner.png);
-    background-size: cover;
-    background-position: top right;
-    background-repeat: no-repeat;
-  }
-}
+
 @media screen and (min-width: 1201px) {
   .banner-holder img {
     width: 100%;
@@ -264,12 +267,7 @@ div#secondary-nav li a {
     clear: both;
     margin: 20px auto;
   }
-  .banner-holder.container.text-center {
-    background: url(http://laboratory.dev.lan/bellywellyjelly/static/img/banner.png);
-    background-size: cover;
-    background-position: -680px 0px;
-    background-repeat: no-repeat;
-  }
+
 }
 .img-holder {
   max-height: 234px;
@@ -287,39 +285,150 @@ div#secondary-nav li a {
   width: 98%;
   height: auto;
 }
+/* SLIDER CSS */
+
+/* overwrite the applied dimensions */
+.banner-holder .eps-slide {
+  width: 100% !important;
+  min-width: 100% !important;
+  max-width: none !important;
+  max-height: none !important;
+}
+  .banner-holder .da-slide {
+    min-width: 320px !important;
+    height: 100% !important;
+  }
+    .banner-holder .da-img {
+      width: 100% !important;
+      min-width: 640px !important;
+      background-size: 100% !important;
+    }
 div.da-slide-heading-content h2 {
     font-family: Raleway-ExtraLight!important;
     font-size: 3.5em!important;
     text-align: center;
     display: block;
     width: 80%;
+    left: 10%;
     font-weight: normal!important;
-    margin-top: 110px;
+    margin: 0px !important;
+    top: 30%;
 }
 
 .da-slide-content {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif!important;
-    font-size: 1.2em;
     display: block!important;
     width: 80%!important;
     text-align: center;
     clear: both;
-    top: 220px!important;
+    top: 46% !important;
 }
 
 .da-slide a.da-link {
     display: block!important;
-    width: 20%;
+    width: auto!important;
     background: transparent!important;
     border-radius: 0;
-    border: 2px solid #fff;
-    padding: 14px;
+    border: 0px !important;
+    padding: 0px;
+    font-size: 11px !important;
+    letter-spacing: 4px;
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif!important;
     text-decoration: none!important;
-    margin: 0px 30%;
-    top: 271px;
-}
+    top: 60% !important;
 
+    /* Read more centering */
+
+    /* NOTES: 
+     * centering is achieved by placing .da-link in the middle
+     * and then offsetting left its inner div.da-link-div by 
+     * half the div.da-link-div's amount
+     */
+    margin: 0px;
+    left: 50% !important;
+}
+  div.da-link-div {
+    border: 1px solid #fff;
+    padding: 5px;
+    width: 210px;
+    margin-left: -105px;
+  }
+
+  /* Slider Responsive sizing */
+  @media (min-width: 960px) {
+    div.da-slide-heading-content h2 {
+        font-size: 3.5em!important;
+    }
+    .da-slide-content {
+        font-size: 1.2em;
+    }
+    .da-slide a.da-link {
+        font-size: 11px !important;
+        letter-spacing: 4px;
+    }
+  }
+  @media (min-width: 768px) and (max-width: 959px) {
+    div.da-slide-heading-content h2 {
+        font-size: 3.0em!important;
+    }
+    .da-slide-content {
+        font-size: 1.2em;
+    }
+    .da-slide a.da-link {
+        font-size: 10px !important;
+        letter-spacing: 4px;
+    }
+  }
+  @media (min-width: 640px) and (max-width: 767px) {
+    div.da-slide-heading-content h2 {
+        font-size: 2.5em!important;
+    }
+    .da-slide-content {
+        font-size: 1.0em;
+    }
+    .da-slide a.da-link {
+        font-size: 10px !important;
+        letter-spacing: 4px;
+    }
+  }
+  @media (min-width: 480px) and (max-width: 639px) {
+    div.da-slide-heading-content h2 {
+        font-size: 2.3em!important;
+    }
+    .da-slide-content {
+        font-size: 1.0em;
+    }
+    .da-slide a.da-link {
+        font-size: 10px !important;
+        letter-spacing: 4px;
+    }
+    .da-slide div.da-link-div {
+      padding: 2px;
+      width: 180px;
+      margin-left: -90px;
+    }
+  }
+  @media (min-width: 0px) and (max-width: 479px) {
+    div.da-slide-heading-content h2 {
+      font-size: 1.4em !important;
+      font-family: 'Raleway-Light';
+    }
+    .da-slide-content {
+      font-size: 1.0em;
+      font-weight: 200 !important;
+    }
+    .da-slide a.da-link {
+      font-size: 10px !important;
+      letter-spacing: 2px;
+    }
+    .da-slide div.da-link-div {
+      padding: 2px;
+      width: 180px;
+      margin-left: -90px;
+    }
+  }
+
+    
 .da-arrows span:after {
     box-shadow: none!important;
     color: #fff!important;
