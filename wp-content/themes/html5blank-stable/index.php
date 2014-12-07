@@ -4,7 +4,7 @@
 <section id="banner" class="container-fluid">
 	<div class="banner-holder container text-center">
 	
-		<?php echo do_shortcode("[epsshortcode id=33]"); ?>
+		<?php echo do_shortcode("[epsshortcode id=36]"); ?>
 		
 		
 		<!--<img class="banner hidden-xs" src="<?php /*echo get_template_directory_uri(); */?>/img/banner.png" alt="Banner" width="1200" height="500">
