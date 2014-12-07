@@ -48,7 +48,6 @@
 
 		var widthBreakPoint = 640; // the width at which to start cropping
 		var minHeight = widthBreakPoint/AR;
-		console.log(minHeight);
 		$heightTargets.css('min-height', minHeight + 'px');
 
 		function sizing() {
