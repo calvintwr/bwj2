@@ -28,12 +28,18 @@
 		<!-- post details -->
 	<!--	<span class="date"><?php /*the_time('F j, Y'); */?> <?php /*// the_time('g:i a'); */?></span>
 		<span class="author"><?php /*_e( 'Published by', 'html5blank' ); */?> <?php /*the_author_posts_link(); */?></span>-->
+		<?php
+		
+	 do_action("mashshare"); 
+		
+?>
+
 		<span class="comments"><?php if (comments_open( get_the_ID() ) ) comments_popup_link( __( 'Leave your thoughts', 'html5blank' ), __( '1 Comment', 'html5blank' ), __( '% Comments', 'html5blank' )); ?></span>
 		<!-- /post details -->
 
 		<?php // html5wp_excerpt('html5wp_index'); // Build your custom callback length in functions.php ?>
 
-		<?php edit_post_link(); ?>
+	<?php if (current_user_can( 'manage_options' )) { ?> | 	<?php } edit_post_link(); ?>
 
 	</article>
 	<!-- /article -->
