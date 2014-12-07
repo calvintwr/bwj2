@@ -24,20 +24,39 @@
 			<!-- /post title -->
 
 			<!-- post details -->
-			<span class="date"><?php the_time('F j, Y'); ?> <?php the_time('g:i a'); ?></span>
-			<span class="author"><?php _e( 'Published by', 'html5blank' ); ?> <?php the_author_posts_link(); ?></span>
-			<span class="comments"><?php if (comments_open( get_the_ID() ) ) comments_popup_link( __( 'Leave your thoughts', 'html5blank' ), __( '1 Comment', 'html5blank' ), __( '% Comments', 'html5blank' )); ?></span>
+		<!--	<span class="date"><?php /*the_time('F j, Y'); */?> <?php /*the_time('g:i a'); */?></span>
+			<span class="author"><?php /*_e( 'Published by', 'html5blank' ); */?> <?php /*the_author_posts_link(); */?></span>
+			<span class="comments"><?php /*if (comments_open( get_the_ID() ) ) comments_popup_link( __( 'Leave your thoughts', 'html5blank' ), __( '1 Comment', 'html5blank' ), __( '% Comments', 'html5blank' )); */?></span>-->
 			<!-- /post details -->
+			
+			<!-- /post thumbnail -->
+	
+		<p class="description"> <?php the_tags( '', ', ', '' ); ?>  — <?php the_time('j F, Y'); ?></p>
+		<!-- /post title -->
 
 			<?php the_content(); // Dynamic Content ?>
+			<?php echo do_shortcode("[contentblock id=signature]") ?>
+			<br>	<?php
+		
+	 do_action("mashshare"); 
+		
+?><br>
 
-			<?php the_tags( __( 'Tags: ', 'html5blank' ), ', ', '<br>'); // Separated by commas with a line break at the end ?>
+		<span class="comments"><?php if (comments_open( get_the_ID() ) ) comments_popup_link( __( 'Leave your thoughts', 'html5blank' ), __( '1 Comment', 'html5blank' ), __( '% Comments', 'html5blank' )); ?></span>
+		<!-- /post details -->
 
-			<p><?php _e( 'Categorised in: ', 'html5blank' ); the_category(', '); // Separated by commas ?></p>
+		<?php // html5wp_excerpt('html5wp_index'); // Build your custom callback length in functions.php ?>
 
-			<p><?php _e( 'This post was written by ', 'html5blank' ); the_author(); ?></p>
+	<?php if (current_user_can( 'manage_options' )) { ?> | 	<?php } edit_post_link(); ?>
+ 	
 
-			<?php edit_post_link(); // Always handy to have Edit Post Links available ?>
+			<?php /*the_tags( __( 'Tags: ', 'html5blank' ), ', ', '<br>'); // Separated by commas with a line break at the end */?><!--
+
+			<p><?php /*_e( 'Categorised in: ', 'html5blank' ); the_category(', '); // Separated by commas */?></p>
+
+			<p><?php /*_e( 'This post was written by ', 'html5blank' ); the_author(); */?></p>
+
+			--><?php /*edit_post_link(); // Always handy to have Edit Post Links available */?>
 
 			<?php comments_template(); ?>
 
@@ -57,11 +76,11 @@
 		<!-- /article -->
 
 	<?php endif; ?>
-
+	
 	</section>
 	<!-- /section -->
 	</main>
 
-<?php get_sidebar(); ?>
+<?php // get_sidebar(); ?>
 
 <?php get_footer(); ?>
