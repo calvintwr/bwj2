@@ -28,14 +28,23 @@
 	
 	<section id="header" class="text-center container">
 	<header class="row">
-		<a href="#" id="logo">
-            <img class="img-responsive" alt="BellyWellyJelly" src="<?php echo get_template_directory_uri(); ?>/img/logo.png" width="341" height="76">
-        </a>
+		<a href="<?php bloginfo('url') ?>" id="logo">
+          <img class="img-responsive" alt="BellyWellyJelly" src="<?php echo get_template_directory_uri(); ?>/img/logo.png" width="341" height="76"></a>
+  
 		<div class="tag-line">
             is in <img src="<?php echo get_template_directory_uri(); ?>/img/globe-icon.png" height="20" width="17"> <span class="highlight">SINGAPORE</span>
         </div>
 		<nav id="mainmenu">
 				<?php html5blank_nav(); ?>
 		</nav>
+		<?php
+		if(is_category()):
+		?>
+		<div id="secondary-nav" class="row">
+            <div class="col-sm-4 text-uppercase text-right"><h4>Blog Categories</h4></div>
+        <nav id="submenu" class="col-sm-8 text-left text-uppercase">
+            <?php wp_nav_menu('extra-menu'); ?>
+        </nav></div>
+		<?php endif; ?>
 	</header>
 </section>
