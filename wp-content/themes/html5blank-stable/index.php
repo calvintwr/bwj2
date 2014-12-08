@@ -2,7 +2,7 @@
 
 <?php if(is_front_page() || is_home()): ?>
 <section id="banner" class="container-fluid">
-	<div class="banner-holder container text-center">
+	<div class="banner-holder container text-center" style="opacity: 0">
 	
 		<?php echo do_shortcode("[epsshortcode id=36]"); ?>
 		
@@ -52,7 +52,7 @@
 
 		function sizing() {
 			var w = $(window).width();
-			var h = w / AR;
+			var h = Math.floor(w / AR);
 
 			if(w > widthBreakPoint) {
 				$heightTargets.css('height', h + 'px');
@@ -67,6 +67,7 @@
 
 		//bind some events
 		$(window).load(function() {
+			$('.banner-holder').animate({'opacity': 1});
 			return sizing();
 		}).resize(function() {
 			return sizing();

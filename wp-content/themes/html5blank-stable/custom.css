@@ -157,10 +157,10 @@ section#banner {
 .banner-holder div.row div.frame a.button {
   color: #fff;
 }
-.frame {
+/*.frame {
   min-height: 170px;
   margin: auto auto;
-}
+}*/
 .banner-holder div.row div.frame a.button {
   display: block;
   padding: 17px;
