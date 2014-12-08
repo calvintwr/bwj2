@@ -2,6 +2,7 @@
 
 <?php echo do_shortcode('[ajax_load_more post_type="post" posts_per_page="3" scroll="false" pause="true" button_label="Load more"]'); ?>
 
+<!-- activate the load at page load -->
 <script>
 jQuery(function($) {
 	$('#load-more').click();
