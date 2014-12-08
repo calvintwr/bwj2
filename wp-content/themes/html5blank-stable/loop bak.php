@@ -2,7 +2,7 @@
 
 	<!-- article -->
 	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-
+		heelow<?php echo is_home(); ?>
 
 		<!-- post title -->
 		<h2 class="title">
