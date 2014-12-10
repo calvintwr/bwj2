@@ -1,16 +1,34 @@
 <!-- footer -->
 <footer class="footer container-fluid" role="contentinfo">
 
-
 	<div class="row text-left">
-		<div class="col-sm-4">
-			<?php echo do_shortcode("[contentblock id=footer_profile]") ?>
+		<style>
+		.footer_instagram {
+			text-align: center;
+		}
+			.simple_slider, .loading_cont {
+				width: 100%;
+				height: 320px;
+				max-width: 320px;
+				margin: auto;
+			}
+			#insta_loading img {
+				width: 32px;
+			}
+		</style>
+		<div class="col-sm-4 footer_instagram">
+			<?php //echo do_shortcode("[contentblock id=footer_profile]") ?>
+			<h3>Instagram</h3>
+			<div class='loading_cont'>
+				<div class='vAlign' style="height:100%; vertical-align:middle; display: inline-block"></div>
+				<span id="insta_loading"></span>
+			</div>
+			<div class='simple_slider' style="display:none;"></div>
 		</div>
-		<div id="about" class="col-sm-8">
-			<article class="text-left">
-				<br><br>
-				<?php echo do_shortcode("[contentblock id=footer_message]") ?>
 
+		<div id="about" class="col-sm-8">
+			<article class="text-left footer-dear-you">
+				<?php echo do_shortcode("[contentblock id=footer_message]") ?>
 			</article>
 		</div>
 
