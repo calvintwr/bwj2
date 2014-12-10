@@ -84,7 +84,13 @@ section#header header nav#mainmenu ul li {
   display: inline-block;
   text-transform: uppercase;
   margin: 0px 2%;
+  border-bottom: 1px solid transparent;
+  padding: 2px 4px;
 }
+  section#header header nav#mainmenu ul li.current-menu-item {
+    border-bottom: 1px solid #606060 !important;
+  }
+
 section#header header nav#mainmenu ul li a {
   color: #606060;
 }
@@ -107,6 +113,15 @@ section#header header nav#submenu ul li {
   font-size: 1em;
   padding: 0px 0px 0px 20px;
 }
+  section#header header nav#submenu ul li a {
+    border-bottom: 1px solid transparent;
+    padding: 2px 4px;
+  }
+  section#header header nav#submenu ul li.current-menu-item a {
+    border-bottom: 1px solid #606060 !important;
+  }
+
+
 section#header header nav#submenu ul li a:hover {
   color: #674ea7;
 }
@@ -211,7 +226,18 @@ section#blog h2.title {
   font-size: 46px;
   font-family: 'Raleway-ExtraLight';
   letter-spacing: 4.5px;
+  word-wrap: break-word;
 }
+  @media (min-width: 0px) and (max-width: 479px) {
+    section#blog h2.title {
+      font-size: 37px;
+    } 
+  }
+  @media (min-width: 480px) {
+    section#blog h2.title {
+      font-size: 46px;
+    } 
+  }
 section#blog p.description {
   margin-bottom: 30px;
 }
@@ -254,7 +280,7 @@ footer #sponsors img {
 }
 div#secondary-nav {
   padding: 40px 0px;
-  border-top: 2px dotted #6c6c6c;
+  border-top: 1px dotted #6c6c6c;
   max-width: 1024px;
   margin: 30px auto 0px;
 }
@@ -279,7 +305,7 @@ div#secondary-nav li a {
   max-width: 1024px;
   margin: 0px auto 30px;
   padding-bottom: 30px;
-  border-bottom: 2px dotted #6c6c6c;
+  border-bottom: 1px dotted #6c6c6c;
 }
 .thumbnail-holder .thumbnail {
   width: 98%;
@@ -536,4 +562,11 @@ section#blog ,section#blog h2 a:link,section#blog ,section#blog h2 a:visited {
   border-bottom: 1px dashed #999;
   padding-bottom:15px
 }
+}
+
+/*footer*/
+@media (max-width: 767px) {
+  .footer-dear-you {
+    padding: 0px 10px;
+  }
 }
