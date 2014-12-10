@@ -18,7 +18,7 @@ Template Name: Blog Page Template
 
 				<?php the_content(); ?>
 
-				<?php comments_template( '', true ); // Remove if you don't want comments ?>
+				<?php //comments_template( '', true ); // Remove if you don't want comments ?>
 
 				<br class="clear">
 
@@ -45,6 +45,6 @@ Template Name: Blog Page Template
 		<!-- /section -->
 	</main>
 
-<?php get_sidebar(); ?>
+<?php //get_sidebar(); ?>
 
 <?php get_footer(); ?>

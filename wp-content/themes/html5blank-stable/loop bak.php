@@ -2,7 +2,6 @@
 
 	<!-- article -->
 	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-		heelow<?php echo is_home(); ?>
 
 		<!-- post title -->
 		<h2 class="title">
@@ -24,6 +23,9 @@
 		<!-- post content -->
 		<?php the_content(); // Dynamic Content ?>
 		<!-- /post content -->
+
+		<!-- signature -->
+		<?php echo do_shortcode("[contentblock id=signature]") ?>
 		
 		<!-- post details -->
 	<!--	<span class="date"><?php /*the_time('F j, Y'); */?> <?php /*// the_time('g:i a'); */?></span>
@@ -55,4 +57,3 @@
 	<!-- /article -->
 
 <?php endif; ?>
-<?php echo do_shortcode("[contentblock id=signature]") ?>
