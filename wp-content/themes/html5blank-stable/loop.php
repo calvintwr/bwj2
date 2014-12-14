@@ -49,9 +49,9 @@ if ($myposts) :
 <?php
     endforeach;
 
-    echo do_shortcode('[ajax_load_more post_type="post" offset="1" posts_per_page="3" scroll="false" pause="true" button_label="Load more"]');
+    echo do_shortcode('[ajax_load_more post_type="post" offset="1" posts_per_page="1" scroll="false" pause="true" button_label="Load more"]');
 ?>
-        <!-- activate the load at page load -->
+        <!-- activate the load at page load -DISABLED -->
         <script>
         jQuery(function($) {
             $('#load-more').click();

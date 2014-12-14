@@ -11,7 +11,8 @@
 		startOn : 0,
 		speed : 3500,
 		transition : 400,
-		arrows : true
+		arrows : true,
+		_isFirst : true
 		}, options);
 
 		return this.each(function() {
@@ -46,54 +47,58 @@
 				return ((slides.eq(target).height() / slider.width()) * 100) + '%';
 			}
 
-			function animate_slide(target) {
+			function animate_slide(target, isFirst) {
 
-			if (!animating) {
-				animating = true;
-				var target_slide = slides.eq(target);
+				if (!animating || isFirst) {
+					animating = true;
+					var target_slide = slides.eq(target);
 
-				target_slide.fadeIn(transition);
-				slides.not(target_slide).fadeOut(transition);
+					target_slide.fadeIn(transition, function() {
+						animating = false;
+					});
 
-				slider.animate({paddingBottom: get_height(target)}, transition,  function() {
-					animating = false;
-				});
+					if (!isFirst) { slides.not(target_slide).fadeOut(transition); }
 
-				reset_timer();
+					// slider.animate({paddingBottom: get_height(target)}, transition,  function() {
+					// 	animating = false;
+					// });
 
+					reset_timer();
+
+				}
+			};
+
+			// Next Slide
+
+			function next_slide() {
+				target = target === slide_count - 1 ? 0 : target + 1;
+				animate_slide(target);
 			}
-		};
 
-		// Next Slide
+			// Prev Slide
 
-		function next_slide() {
-			target = target === slide_count - 1 ? 0 : target + 1;
-			animate_slide(target);
-		}
+			function prev_slide() {
+				target = target === 0 ? slide_count - 1 : target - 1;
+				animate_slide(target);
+			}
 
-		// Prev Slide
+			if (settings.arrows) {
+				slider.append('<div class="sssprev"/>', '<div class="sssnext"/>');
+			}
 
-		function prev_slide() {
-			target = target === 0 ? slide_count - 1 : target - 1;
-			animate_slide(target);
-		}
+			next = slider.find('.sssnext'),
+			prev = slider.find('.sssprev');
 
-		if (settings.arrows) {
-			slider.append('<div class="sssprev"/>', '<div class="sssnext"/>');
-		}
+			$(document).ready(function() {
 
-		next = slider.find('.sssnext'),
-		prev = slider.find('.sssprev');
+				slider.css({paddingBottom: get_height(target)}).click(function(e) {
 
-		$(document).ready(function() {
-
-			slider.css({paddingBottom: get_height(target)}).click(function(e) {
-
-				clicked = $(e.target);
-				if (clicked.is(next)) { next_slide() }
+					clicked = $(e.target);
+					if (clicked.is(next)) { next_slide() }
 					else if (clicked.is(prev)) { prev_slide() }
 				});
-				animate_slide(target);
+				
+				animate_slide(target, true);
 
 				$(document).keydown(function(e) {
 					key = e.keyCode;
@@ -102,7 +107,7 @@
 				});
 
 			});
-		// End
+			// End
 
 		});
 

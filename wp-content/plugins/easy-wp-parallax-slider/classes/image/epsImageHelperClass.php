@@ -151,11 +151,18 @@ class epsImageHelperClass {
 	 * @return string resized image URL
 	 */
 	function eps_get_image_url() {
+
+		//MODIFICATIONS
+		$url = wp_get_attachment_image_src($this->id, "full");
+		return $url[0];
+
 		// Get the image file path
 		$file_path = get_attached_file($this->id);
 
 		// load image
 		$image = wp_get_image_editor($file_path);
+
+
 
 		// editor will return an error if the path is invalid
 		if (is_wp_error($image)) {

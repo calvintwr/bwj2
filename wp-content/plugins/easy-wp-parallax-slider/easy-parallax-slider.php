@@ -1,6 +1,6 @@
 <?php
 /*
-  Plugin Name: Easy Parallax Slider
+  Plugin Name: Easy Parallax Slider (DO NOT UPDATE)
   Plugin URI: http://www.oscitasthemes.com
   Description: Easy Parallax Slider provides layered slider feature.
   Version: 2.1.0

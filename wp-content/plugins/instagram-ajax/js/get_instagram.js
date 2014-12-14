@@ -17,7 +17,7 @@
     
 
     instaPost.done(function(data) {
-        console.log(data);
+        //console.log(data);
         if(data.meta.code === 200) {
 
             var len = data.data.length;
@@ -34,7 +34,7 @@
                 var atag  = '<a href="' + frame.link + '" target="_blank"></a>';
 
                 $ss.append(img);
-               // $(img).wrap(atag);
+                $(img).wrap(atag);
             }
 
             $(function() { 

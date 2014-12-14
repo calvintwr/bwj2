@@ -1,6 +1,6 @@
 <!-- footer -->
 <footer class="footer container-fluid" role="contentinfo">
-
+	<!--
 	<div class="row text-left">
 		<style>
 		.footer_instagram {
@@ -25,18 +25,20 @@
 			</div>
 			<div class='simple_slider' style="display:none;"></div>
 		</div>
+		-->
 
-		<div id="about" class="col-sm-8">
+		<div id="about" class="col-sm-12">
 			<article class="text-left footer-dear-you">
 				<?php echo do_shortcode("[contentblock id=footer_message]") ?>
 			</article>
 		</div>
 
 	</div>
+
 	<br><br>
 
 
-	<div id="sponsors" class="row  text-left">
+	<div id="sponsors" class="row  text-left col-sm-12">
 		<h5 class="text-capitalize">SPONSORS</h5>
 		<hr>
 		<div class="text-center">

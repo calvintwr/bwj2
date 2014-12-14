@@ -688,3 +688,17 @@
 	/*90%{ left: 0%;  opacity: 0; }*/
 	/*100%{ left: -50%; opacity: 0; }*/
 /*}*/
+.banner-holder .da-slide {
+        -webkit-transition:opacity  1000ms ease-out 0s !important;
+    -moz-transition:opacity  1000ms ease-out 0s !important;
+    -o-transition:opacity  1000ms ease-out 0s !important;
+    transition: opacity 1000ms ease-out 0s !important;
+        opacity:  0!important;
+}
+.banner-holder .da-slide-current {
+        -webkit-transition:opacity  0ms ease-out 0s !important;
+    -moz-transition:opacity  1000ms ease-out 0s !important;
+    -o-transition:opacity  1000ms ease-out 0s !important;
+    transition:opacity 1000ms ease-out 0s !important;
+        opacity:  1!important;
+}
