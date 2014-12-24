@@ -44,7 +44,7 @@
     </style>
 
     <div class="sidebar_cont_first sidebar_cont sidebar_followme">
-        <h3 style="color: #FFCBA8;">FOLLOW ME ON</h3>
+        <h3>FOLLOW ME ON</h3>
         <div class='widget-inner follow-icons-cont'>
             <a href="https://facebook.com/christabel.chua" target="_blank">
                 <img src="<?php echo $uri; ?>/img/icons/56x56px/facebook.png">
@@ -62,7 +62,7 @@
     </div>
 
     <div class="sidebar_cont footer_instagram">
-        <h3 style="color: #CFF5DB;">INSTAGRAM</h3>
+        <h3>INSTAGRAM</h3>
         <div class='loading_cont'>
             <div class='insta-placeholder'>
                 <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
@@ -87,4 +87,32 @@
 
 
 </aside>
+<!-- Sidebar pastel color-->
+<script>
+var sidebarColor = {
+    colors: ['#F599CF', '#F3EE8B', '#BCE2B7', '#8BBFDD', '#AAA9EF'],
+    colorize: function() {
+        var $ = jQuery;
+        var $headers = $('.sidebar_cont>h3');
+        console.log($headers);
+        var counter = 0;
+        var self = this;
+        $headers.each(function(i, el) {
+
+            //reset counter if it is larger than my colors array.
+            if (counter > self.colors.length - 1) {
+                counter = 0;
+            }
+
+            //set color
+            var color = self.colors[counter];
+            $(el).css('color', color);
+
+            console.log(color);
+            counter += 1;
+        });
+    }
+};
+sidebarColor.colorize();
+</script>
 <!-- /sidebar -->
