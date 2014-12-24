@@ -289,10 +289,20 @@ p#social {
 }
 /*SIDEBAR */
 .sidebar_cont {
-  border: 1px solid #ddd;
   padding-top: 0px!important;
   margin-top: 40px;
 }
+  @media (min-width: 768px) {
+    .sidebar_cont {
+      border: 1px solid #ddd;
+    }
+  }
+  @media (min-width: 0px) and (max-width: 776px) {
+    .sidebar_cont {
+      border-top: 1px solid #ddd;
+    }
+  }
+
 .sidebar_cont_first {
   padding-top: 0px!important;
   margin-top: 0px;
