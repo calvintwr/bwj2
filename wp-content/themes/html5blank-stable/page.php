@@ -2,7 +2,7 @@
 
 	<main role="main">
 		<!-- section -->
-				<section id="blog" class="container main text-center">
+			<section id="page" class="container main text-center">
 
 			<h1><?php the_title(); ?></h1>
 

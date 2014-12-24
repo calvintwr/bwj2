@@ -12,14 +12,31 @@
     .sidebar_followme .widget-inner a img {
         width: 25px;
     }
+        .sidebar_followme .follow-icons-cont {
+            padding-bottom: 20px;
+        }
+
     .footer_instagram {
         text-align: center;
     }
         .simple_slider, .loading_cont {
             width: 100%;
-            height: 320px;
             max-width: 320px;
             margin: auto;
+        }
+        .loading_cont {
+            position: relative;
+        }
+        .insta-placeholder img {
+            width: 100%;
+        }
+        .loading_inner {
+            position: absolute;
+            top: 0px;
+            height: 100%;
+            width: 100%;
+            text-align: center;
+
         }
         #insta_loading img {
             width: 32px;
@@ -28,7 +45,7 @@
 
     <div class="sidebar_cont_first sidebar_cont sidebar_followme">
         <h3>FOLLOW ME ON</h3>
-        <div class='widget-inner'>
+        <div class='widget-inner follow-icons-cont'>
             <a href="https://facebook.com/christabel.chua" target="_blank">
                 <img src="<?php echo $uri; ?>/img/icons/56x56px/facebook.png">
             </a>
@@ -47,8 +64,13 @@
     <div class="sidebar_cont footer_instagram">
         <h3>INSTAGRAM</h3>
         <div class='loading_cont'>
-            <div class='vAlign' style="height:100%; vertical-align:middle; display: inline-block"></div>
-            <span id="insta_loading"></span>
+            <div class='insta-placeholder'>
+                <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+            </div>
+            <div class="loading_inner">
+                <div class='vAlign' style="height:100%; vertical-align:middle; display: inline-block"></div>
+                <span id="insta_loading"></span>
+            </div>
         </div>
         <div class='simple_slider' style="display:none;"></div>
     </div>
