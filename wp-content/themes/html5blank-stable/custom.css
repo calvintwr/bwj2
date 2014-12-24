@@ -43,37 +43,53 @@ body {
   color: #606060;
 }
 
+.max-width-wrap {
+  max-width: 1024px;
+  margin: auto;
+}
+
 .tag-line {
   letter-spacing: 2px;
-  font-size: 12px;
-  margin-top: 12px;
+  font-size: 10px;
+  margin-top: 1px;
 }
-section#header header {
-  padding-top: 20px;
-}
+  .logo-location-wrap {
+    padding: 10px 0px;
+    display: inline-block;
+    vertical-align: middle;
+  }
 section#header header a#logo {
-  max-width: 350px;
   display: block;
   margin: auto;
 }
 section#header header a#logo img {
   margin: 0 auto;
   padding: 0px 15px;
+  width: 200px;
 }
 #mainmenu {
-  padding: 20px 0px;
-  margin-top: 15px;
+  padding: 10px 0px;
+  display: inline-block;
+  vertical-align: middle;
 }
-  @media (min-width: 0px) and (max-width: 480px) {
+  @media (min-width: 0px) and (max-width: 767px) {
     #mainmenu {
       font-size: 12px !important;
+      width: 400px;
     }
   }
-  @media (min-width: 481px) {
+  @media (min-width: 767px) {
     #mainmenu {
       letter-spacing: 1px;
+      width: 550px;
     }
   }
+  @media (min-width: 0px) and (max-width: 480px) {
+    #mainmenu {
+      width: 320px;
+    }
+  }
+
 
 
 section#header header nav#mainmenu ul {
@@ -83,10 +99,23 @@ section#header header nav#mainmenu ul {
 section#header header nav#mainmenu ul li {
   display: inline-block;
   text-transform: uppercase;
-  margin: 0px 2%;
+
   border-bottom: 1px solid transparent;
   padding: 2px 4px;
 }
+
+  @media (min-width: 0px) and (max-width: 480px) {
+    section#header header nav#mainmenu ul li {
+        margin: 0px 1%;
+    }
+  }
+  @media (min-width: 481px) {
+    section#header header nav#mainmenu ul li {
+        margin: 0px 3%;
+    }
+  }
+
+
   section#header header nav#mainmenu ul li.current-menu-item {
     border-bottom: 1px solid #606060 !important;
   }
@@ -219,7 +248,8 @@ section#blog {
   max-width: 810px;
 }
 section#blog article {
-  margin-bottom: 70px;
+  padding-bottom: 70px;
+  border-bottom: 1px solid #ccc;
 }
 section#blog h2.title {
   text-transform: uppercase;
@@ -257,8 +287,24 @@ p#social {
   color: #9E9E9E;
   font-size: 0.9em;
 }
+/*SIDEBAR */
+.sidebar_cont {
+  border: 1px solid #ddd;
+  padding-top: 0px!important;
+  margin-top: 40px;
+}
+.sidebar_cont_first {
+  padding-top: 0px!important;
+  margin-top: 0px;
+}
+.sidebar h3 {
+  font-family: ChristopherHand;
+  font-size: 2em;
+}
+
 footer {
   max-width: 1024px;
+  border-top: 1px dotted #6c6c6c;
 }
 footer #about h2 {
   font-family: ChristopherHand;
@@ -303,9 +349,7 @@ div#secondary-nav li a {
 .row.thumbnail-holder {
   padding: 0;
   max-width: 1024px;
-  margin: 0px auto 30px;
   padding-bottom: 30px;
-  border-bottom: 1px dotted #6c6c6c;
 }
 .thumbnail-holder .thumbnail {
   width: 98%;
@@ -361,7 +405,7 @@ div.da-slide-heading-content h2 {
     letter-spacing: 4px;
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif!important;
     text-decoration: none!important;
-    top: 60% !important;
+    top: 56% !important;
 
     /* Read more centering */
 
