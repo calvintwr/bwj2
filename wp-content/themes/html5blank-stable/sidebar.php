@@ -44,7 +44,7 @@
     </style>
 
     <div class="sidebar_cont_first sidebar_cont sidebar_followme">
-        <h3>FOLLOW ME ON</h3>
+        <h3>STAY CONNECTED</h3>
         <div class='widget-inner follow-icons-cont'>
             <a href="https://facebook.com/christabel.chua" target="_blank">
                 <img src="<?php echo $uri; ?>/img/icons/56x56px/facebook.png">
@@ -62,7 +62,7 @@
     </div>
 
     <div class="sidebar_cont footer_instagram">
-        <h3>INSTAGRAM</h3>
+        <h3>LIVE UPDATES</h3>
         <div class='loading_cont'>
             <div class='insta-placeholder'>
                 <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
@@ -113,6 +113,6 @@ var sidebarColor = {
         });
     }
 };
-sidebarColor.colorize();
+//sidebarColor.colorize();
 </script>
 <!-- /sidebar -->
