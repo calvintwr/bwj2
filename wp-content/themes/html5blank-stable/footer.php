@@ -26,7 +26,7 @@
 	<br><br>
 
 	<!-- copyright -->
-	<p class="copyright">© <?php echo date('Y'); ?> Bellywellyjelly.com </p>
+	<div class="copyright col-sm-12">© <?php echo date('Y'); ?> Bellywellyjelly.com </div>
 
 </footer>
 <!-- /footer -->

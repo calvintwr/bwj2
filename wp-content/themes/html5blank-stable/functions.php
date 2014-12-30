@@ -467,7 +467,7 @@ function theme_icon(){
 }
 
 function bwj_setting() {
-	register_setting( 'bwj_options_group', 'my_option_name', 'intval' ); 
+	register_setting( 'bwj_options_group', 'i_am_in'); 
 } 
 add_action( 'admin_init', 'bwj_setting' );
 
@@ -478,7 +478,165 @@ function bellywellyjelly_menu_page(){   ?>
 <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/admin.css">
     <h2>BellyWellyJelly Options</h2>
     <form method="post" action="options.php"> 
-    <?php settings_fields( 'myoption-group' ); ?>    
-    </div>
+    <?php 
+        settings_fields( 'bwj_options_group' ); 
+        do_settings_sections( 'bwj_options_group' );
+    ?>
 
-<?php } ?>
+    <table class="form-table">
+        <tr valign="top">
+        <th scope="row">Location: </th>
+        <td><input type="text" name="i_am_in" value="<?php echo esc_attr( get_option('i_am_in') ); ?>" /></td>
+        </tr>
+    </table>
+
+    <?php submit_button(); ?>
+
+    </form>
+
+<?php } 
+
+function meta_data_generator() {
+  /* My title, description and OG generator */
+
+  //clear my variables, just in case
+  $title_html = '';
+  $meta_des_html = '';
+  $og_html = '';
+
+  //if this is view profile page
+  //doesn't fire if UU is disabled
+  if ( is_front_page() ) {
+
+
+      //title
+      $title_html = '';
+      $title_html .= '<title>'.get_bloginfo('title').'</title>';
+
+      //opengraph title
+      $og_title_html = '<meta property="og:title" content="'.get_bloginfo('title').'">';
+
+      //meta description
+      $meta_des_html = '';
+      $meta_des_html .= '<meta name="description" content="'.get_bloginfo('description').'">';
+
+      //opengraph image
+      //if feature image is set
+      $feature_image_url = wp_get_attachment_url( get_post_thumbnail_id($post_id) );
+      if($feature_image_url) {
+        $og_img_html = '<meta property="og:image" content="'.$feature_image_url.'">';
+        $og_html .= $og_img_html;
+      }
+          
+  }
+
+
+  //if is all other page types
+  //other page type/names should be put before this elseif layer if you need to trigger different behaviour
+  elseif ( is_singular() ) {
+
+      // title and opengraph title
+
+      $title_html = '';
+      $title = get_the_title();
+      if ( get_the_title() != '' ) {
+          $title_html .= '<title>'.get_the_title().' - '.get_bloginfo('name').'</title>'; 
+
+          $og_title_html = '<meta property="og:title" content="'.get_the_title().' - '.get_bloginfo('name').'">'; 
+
+      } else {
+          $title_html .= '<title>'.get_bloginfo('name').'</title>';      
+
+          $og_title_html = '<meta property="og:title" content="'.get_bloginfo('name').'">';    
+      }
+
+      //meta description
+      $meta_des_html = '';
+
+      //lift post ID
+      global $post;
+      $post_id = $post->ID;
+
+      /*
+      Depending on post type, the following key is used for description:
+
+      Posts:
+        Uses "post_excerpt". Also can use custom_description in 2nd priority, if you did enter description in excerpt
+        but into custom_descrption meta.
+
+      Pages:
+        Pages don't have "post_excerpt" natively available in Wordpress. The custom meta key "custom_description" is used.
+
+      */
+
+      //check if post_excerpt is available
+      $post_excerpt = strip_tags( get_post_field( 'post_excerpt', $post_id ) );
+
+      if ( !empty($post_excerpt) ) {
+        $meta_des_html .= '<meta name="description" content="'.$post_excerpt.'">';
+      } else {
+
+        //post_excerpt is empty, now check custom_description
+
+        $custom_des = get_post_meta( $post_id, 'custom_description', true );
+        if ( !empty($custom_des) ) {
+            $meta_des_html .= '<meta name="description" content="'.$custom_des.'">';
+        }
+
+        //alright fine so now both fields are empty, we have no choice but to create our custom description based on content.
+
+        else {
+            $post_content = strip_tags( get_post_field( 'post_content', $post_id ) );
+
+            //truncate the $post_content to 160 char and add ellipsis
+            if ( strlen($post_content)>160 ) {
+                $post_content = substr($post_content, 0, 157);
+                $post_content = $post_content.'...';
+            }
+            $meta_des_html .= '<meta name="description" content="'.$post_content.'">';
+        }
+      }
+
+
+    //opengraph image
+    //if feature image is set
+    $feature_image_url = wp_get_attachment_url( get_post_thumbnail_id($post_id) );
+    if($feature_image_url) {
+      $og_img_html = '<meta property="og:image" content="'.$feature_image_url.'">';
+      $og_html .= $og_img_html;
+    }
+  }
+
+
+  //just in case it isn't any of the above... which is unlikely but...
+  else {
+      // title
+      $title_html = '';
+      $title = get_the_title();
+      if ( get_the_title() != '' ) {
+          $title_html .= '<title>'.get_the_title().' - '.get_bloginfo('name').'</title>';        
+      } else {
+          $title_html .= '<title>'.get_bloginfo('name').'</title>';         
+      }
+
+      //meta description
+      $meta_des_html = '';
+      $meta_des_html .= '<meta name="description" content="'.get_bloginfo('description').'">';
+
+      //no opengraph
+  }
+
+  $all_html = $title_html;
+  $all_html .= $meta_des_html;
+
+  //opengraph - and add my standard og tag
+  $og_html .= '<meta property="og:site_name" content="'.get_bloginfo('name').'">';
+  $og_html .= '<meta property="og:type" content="website">';
+
+  $all_html .= $og_html;
+
+return $all_html;
+}
+
+
+?>

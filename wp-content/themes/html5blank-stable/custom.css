@@ -48,15 +48,64 @@ body {
   margin: auto;
 }
 
+.stickyTop {
+  position: fixed;
+  width: 100%;
+  left: 0px;
+  top: 0px;
+  z-index: 9999;
+  background: #fff;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  overflow: hidden;
+}
+#menuToggle {
+  position: absolute;
+  font-size: 24px;
+  top: 10px;
+  right: 20px;
+}
+#menuToggle:hover {
+  cursor: pointer;
+}
+
+  @media (min-width: 0px) and (max-width: 767px) {
+    .stickyTopPlaceHolder {
+      height: 120px;
+    }
+
+    .stickyTop {
+      height: 120px;
+    }
+    #menuToggle {
+      display: inline;
+    }
+  }
+  @media (min-width: 767px) {
+    .stickyTopPlaceHolder {
+      height: 78px;
+    }
+
+    .stickyTop {
+      height: 78px;
+    }
+    #menuToggle {
+      display: none !important;
+    }
+  }
+
 .tag-line {
   letter-spacing: 2px;
   font-size: 10px;
   margin-top: 1px;
+  overflow: hidden;
 }
   .logo-location-wrap {
     padding: 10px 0px;
     display: inline-block;
     vertical-align: middle;
+    -webkit-transition: 0.25s;
+    transition: 0.25s;
   }
 section#header header a#logo {
   display: block;
@@ -76,6 +125,7 @@ section#header header a#logo img {
     #mainmenu {
       font-size: 12px !important;
       width: 400px;
+      width: 100%;
     }
   }
   @media (min-width: 767px) {
@@ -172,6 +222,7 @@ section#header header nav#submenu ul li:last-child::after {
 }
 .highlight {
   color: #674ea7;
+  text-transform: uppercase;
 }
 section#banner {
   padding: 0;
@@ -316,14 +367,26 @@ footer {
   max-width: 1024px;
   border-top: 1px dotted #6c6c6c;
 }
+footer #about .footer-dear-you {
+  width: 70%;
+  margin: auto;
+}
 footer #about h2 {
   font-family: ChristopherHand;
-  font-size: 4em;
+  font-size: 5.5em;
+  width: 130%;
+  margin-left: -10%;
 }
+
 footer #sponsors img {
   display: inline-block;
   margin: 0;
 }
+footer .copyright {
+  margin-top: 35px;
+  margin-bottom: 20px;
+}
+
 
 @media screen and (min-width: 1201px) {
   .banner-holder img {
@@ -623,4 +686,9 @@ section#blog ,section#blog h2 a:link,section#blog ,section#blog h2 a:visited {
   .footer-dear-you {
     padding: 0px 10px;
   }
+}
+
+/* comment form */
+#commentform #comment {
+  width: 90%;
 }
