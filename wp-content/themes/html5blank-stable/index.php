@@ -2,7 +2,7 @@
 
 <div class="container-fluid content-outer-wrap">
 	<div class="row">
-		<main role="main" class="col-sm-8">
+		<main role="main" class="main-content col-sm-8">
 			<!-- section -->
 			<section id="blog" class="main text-center">
 

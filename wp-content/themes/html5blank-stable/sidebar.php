@@ -75,6 +75,30 @@
         <div class='simple_slider' style="display:none;"></div>
     </div>
 
+    <!-- start youtube -->
+    <style>
+    .videoWrapper {
+        position: relative;
+        padding-bottom: 56.25%; /* 16:9 */
+        padding-top: 25px;
+        height: 0;
+    }
+    .videoWrapper iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    </style>
+    <div class="sidebar_cont youtube_cont">
+        <h3>ON YOUTUBE</h3>
+        <div class="videoWrapper">
+            <?php echo get_option('youtube'); ?>
+        </div>
+    </div>
+    <!-- end youtube -->
+
 	<?php //get_template_part('searchform'); ?>
 
 	<div class="sidebar-widget">
@@ -84,7 +108,6 @@
 	<div class="sidebar-widget">
 		<?php if(!function_exists('dynamic_sidebar') || !dynamic_sidebar('widget-area-2')) ?>
 	</div>
-
 
 </aside>
 <!-- Sidebar pastel color-->

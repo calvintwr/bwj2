@@ -194,7 +194,7 @@
     	</header>
     </section>
 
-    <?php if(is_front_page() || is_home()): ?>
+    <?php if(is_front_page() || is_home() || is_page('about')): ?>
     <section id="banner" class="container-fluid">
         <div class="banner-holder container text-center" style="opacity: 0">
         

@@ -5,9 +5,9 @@ Template Name: Blog Page Template
 ?>
 <?php get_header(); ?>
 
-	<main role="main">
+	<main role="main" class="main-content">
 		<!-- section -->
-				<section id="blog" class="container main text-center">
+		<section id="blog" class="container main text-center">
 
 			<h1><?php the_title(); ?></h1>
 

@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-	<main role="main" class="container">
+	<main role="main" class="main-content container">
 		<!-- section -->
 		<section>
 			<div class="row thumbnail-holder text-left">

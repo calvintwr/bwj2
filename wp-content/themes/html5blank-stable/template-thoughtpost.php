@@ -5,7 +5,7 @@ Template Name: Thoughtpost Page Template
 ?>
 <?php get_header(); ?>
 
-	<main role="main">
+	<main role="main" class="main-content">
 		<!-- section -->
 		<section id="blog" class="container main text-center">
 

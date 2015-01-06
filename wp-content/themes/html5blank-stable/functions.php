@@ -468,6 +468,7 @@ function theme_icon(){
 
 function bwj_setting() {
 	register_setting( 'bwj_options_group', 'i_am_in'); 
+    register_setting( 'bwj_options_group', 'youtube'); 
 } 
 add_action( 'admin_init', 'bwj_setting' );
 
@@ -485,8 +486,17 @@ function bellywellyjelly_menu_page(){   ?>
 
     <table class="form-table">
         <tr valign="top">
-        <th scope="row">Location: </th>
-        <td><input type="text" name="i_am_in" value="<?php echo esc_attr( get_option('i_am_in') ); ?>" /></td>
+            <th scope="row">Location: </th>
+            <td>
+                <input type="text" name="i_am_in" value="<?php echo esc_attr( get_option('i_am_in') ); ?>" />
+            </td>
+        </tr>
+        <tr valign="top">
+            <th scope="row">Youtube:</th>
+            <td>
+                (*Note: copy and paste the youtube "embed" code here.)
+                <textarea style="height: 130px; width: 310px;" name="youtube" /><?php echo esc_attr( get_option('youtube') ); ?></textarea>
+            </td>
         </tr>
     </table>
 
