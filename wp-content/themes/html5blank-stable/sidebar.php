@@ -74,7 +74,11 @@
         </div>
         <div class='simple_slider' style="display:none;"></div>
     </div>
+    <?php
+    $youtube = get_option('youtube');
 
+    if ($youtube): 
+    ?>
     <!-- start youtube -->
     <style>
     .videoWrapper {
@@ -97,6 +101,7 @@
             <?php echo get_option('youtube'); ?>
         </div>
     </div>
+    <?php endif; ?>
     <!-- end youtube -->
 
 	<?php //get_template_part('searchform'); ?>
