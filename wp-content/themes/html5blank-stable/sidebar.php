@@ -98,7 +98,7 @@
     <div class="sidebar_cont youtube_cont">
         <h3>ON YOUTUBE</h3>
         <div class="videoWrapper">
-            <?php echo get_option('youtube'); ?>
+            <?php echo $youtube ?>
         </div>
     </div>
     <?php endif; ?>

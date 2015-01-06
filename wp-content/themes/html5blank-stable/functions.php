@@ -468,6 +468,7 @@ function theme_icon(){
 
 function bwj_setting() {
 	register_setting( 'bwj_options_group', 'i_am_in'); 
+    register_setting( 'bwj_options_group', 'youtube_url'); 
     register_setting( 'bwj_options_group', 'youtube'); 
 } 
 add_action( 'admin_init', 'bwj_setting' );
@@ -494,10 +495,37 @@ function bellywellyjelly_menu_page(){   ?>
         <tr valign="top">
             <th scope="row">Youtube:</th>
             <td>
-                (*Note: copy and paste the youtube "embed" code here.)
-                <textarea style="height: 130px; width: 310px;" name="youtube" /><?php echo esc_attr( get_option('youtube') ); ?></textarea>
+                (*Note: Copy and paste the youtube link here. The embed code will be auto-generated. )
+                <br />
+                <input type="text" name="youtube_url" value="<?php echo esc_attr( get_option('youtube_url') ); ?>" />
+                <br />
+                <textarea readonly style="height: 130px; width: 310px;" name="youtube" /><?php echo esc_attr( get_option('youtube') ); ?></textarea>
+                <script>
+                (function($) {
+                    $('input[name="youtube_url"]').on('change', function() {
+                        var val = $(this).val();
+                            val = youtubefy(val);
+                        return jQuery('textarea[name="youtube"]').val(val);
+                    });
+                    function youtubefy(url) {
+                        var regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+                        var match = url.match(regExp);
+
+                        if (match && match[2].length == 11) {
+                            var myId = match[2];
+                            var myCode = '<iframe width="560" height="315" src="//www.youtube.com/embed/' 
+                                + myId + '" frameborder="0" allowfullscreen></iframe>';
+                            return myCode;
+                        } else {
+                            return 'error';
+                        }
+                    }
+                })(jQuery);
+
+                </script>
             </td>
         </tr>
+
     </table>
 
     <?php submit_button(); ?>
